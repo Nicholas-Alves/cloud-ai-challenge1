@@ -27,3 +27,4 @@
 /workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai-challenge1.pdb
 /workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai-challenge1.genruntimeconfig.cache
 /workspaces/cloud-ai-challenge1/obj/Debug/net8.0/ref/cloud-ai-challenge1.dll
+/workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai-challenge1.sourcelink.json

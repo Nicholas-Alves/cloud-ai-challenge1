@@ -2,6 +2,30 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Computer vision</h1>
 
-Welcome to your new app.
+<p>Insert URL or type prompt</p>
+
+<textarea @bind="urlOrPrompt" rows="1" cols="50" placeholder="Enter URL to analyze or textual prompt to generate an image"></textarea>
+<br>
+<button @onclick="AnalyzeImage">Analyze</button>
+<button @onclick="GenerateImage">Generate</button>
+@code
+{
+    string urlOrPrompt = "";
+
+    void OnInput(ChangeEventArgs e)
+    {
+        urlOrPrompt = e.Value.ToString();
+    }
+
+    void AnalyzeImage()
+    {
+
+    }
+
+    void GenerateImage()
+    {
+
+    }
+}
