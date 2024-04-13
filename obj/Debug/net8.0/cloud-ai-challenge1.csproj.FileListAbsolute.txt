@@ -28,3 +28,10 @@
 /workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai-challenge1.genruntimeconfig.cache
 /workspaces/cloud-ai-challenge1/obj/Debug/net8.0/ref/cloud-ai-challenge1.dll
 /workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai-challenge1.sourcelink.json
+/workspaces/cloud-ai-challenge1/bin/Debug/net8.0/Azure.AI.Vision.ImageAnalysis.dll
+/workspaces/cloud-ai-challenge1/bin/Debug/net8.0/Azure.Core.dll
+/workspaces/cloud-ai-challenge1/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
+/workspaces/cloud-ai-challenge1/bin/Debug/net8.0/System.ClientModel.dll
+/workspaces/cloud-ai-challenge1/bin/Debug/net8.0/System.Memory.Data.dll
+/workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai-challenge1.csproj.AssemblyReference.cache
+/workspaces/cloud-ai-challenge1/obj/Debug/net8.0/cloud-ai.1294380C.Up2Date
