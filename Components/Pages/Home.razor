@@ -1,0 +1,60 @@
+﻿@page "/"
+
+@using Azure;
+@using Azure.AI.Vision.ImageAnalysis;
+@using System;
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Computer vision</h1>
+
+<p>Insert URL or type prompt</p>
+
+<textarea @bind="urlOrPrompt" rows="1" cols="50" placeholder="Enter URL to analyze or textual prompt to generate an image"></textarea>
+<br>
+<button @onclick="AnalyzeImage">Analyze</button>
+<button @onclick="GenerateImage">Generate</button>
+
+<p>@caption</p>
+
+@code
+{
+    string urlOrPrompt = "";
+
+    string caption = "";
+
+    void OnInput(ChangeEventArgs e)
+    {
+        urlOrPrompt = e.Value.ToString();
+        
+    }
+
+    void AnalyzeImage()
+    {
+        string endpoint = Environment.GetEnvironmentVariable("VISION_ENDPOINT");
+        string key = Environment.GetEnvironmentVariable("VISION_KEY");
+
+        ImageAnalysisClient client = new ImageAnalysisClient(
+            new Uri(endpoint),
+            new AzureKeyCredential(key));         
+
+        ImageAnalysisResult result = client.Analyze(
+            new Uri(urlOrPrompt),
+            VisualFeatures.Caption,
+            new ImageAnalysisOptions { GenderNeutralCaption = true });
+
+        Console.WriteLine("Image analysis results:");
+
+        // Print caption results to the console
+        Console.WriteLine(" Caption:");
+        Console.WriteLine($"   '{result.Caption.Text}', Confidence {result.Caption.Confidence:F4}");
+
+        caption = result.Caption.Text;        
+    }
+
+    void GenerateImage()
+    {
+
+    }
+}
