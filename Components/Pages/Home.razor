@@ -11,27 +11,32 @@
 
 <p>Insert URL or type prompt</p>
 
-<textarea @bind="urlOrPrompt" rows="1" cols="50" placeholder="Enter URL to analyze or textual prompt to generate an image"></textarea>
+<textarea @bind="urlOrPrompt" rows="3" cols="50" placeholder="Enter URL to analyze or textual prompt to generate an image"></textarea>
 <br>
 <button @onclick="AnalyzeImage">Analyze</button>
 <button @onclick="GenerateImage">Generate</button>
+<br>
+
+<img src="@imgToShow" alt="Image to Analyze" height="300px" width="300px">
 
 <p>@caption</p>
 
 @code
 {
     string urlOrPrompt = "";
+    string imgToShow = "https://placehold.it/300x300";
 
     string caption = "";
 
     void OnInput(ChangeEventArgs e)
     {
-        urlOrPrompt = e.Value.ToString();
-        
+        urlOrPrompt = e.Value.ToString();               
     }
 
     void AnalyzeImage()
     {
+        imgToShow = urlOrPrompt;
+
         string endpoint = Environment.GetEnvironmentVariable("VISION_ENDPOINT");
         string key = Environment.GetEnvironmentVariable("VISION_KEY");
 
